@@ -1,7 +1,7 @@
 {
-  "name": "@ucd-lib/lib-server",
+  "name": "@ucd-libselfcheckout",
   "version": "1.0.0",
-  "description": "UCD Library Node.js micro-server boilerplate",
+  "description": "UCD Library Polymer Selfcheckout App for Alma with Node.js micro-server",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js --exec babel-node",
