@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Self Checkout Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="import" href="./node_modules/@polymer/neon-animation/web-animations.html">
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="./node_modules/web-animations-js/web-animations-next-lite.min.js"></script>
+
+    <script  src="./library-self-checkout.js" type="module"></script>
+  </head>
+  <body style="margin:0px;">
+      <library-self-checkout verbose
+                             library=""
+                             circdesk=""
+                             alma_key = 'yourapikey'>
+      </library-self-checkout>
+
+  </body>
+</html>
