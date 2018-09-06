@@ -87,10 +87,14 @@ export default /* @css */`
     .pt-red {
         --paper-toast-background-color: #BA0C2F;
         --paper-toast-color: #fff;
+        font-size: 16px;
+        font-weight: 500;
     }
     .pt-green {
         --paper-toast-background-color: #78BE20;
         --paper-toast-color: #000000;
+        font-size: 16px;
+        font-weight: 500;
     }
 
     #progress_cont{
@@ -100,6 +104,8 @@ export default /* @css */`
     }
     #progress_text{
         margin: 0px;
+        font-size: 16px;
+        font-weight: 500;
     }
     #progress_spin{
         --paper-spinner-layer-1-color: #002855;

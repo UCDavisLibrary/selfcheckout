@@ -1,5 +1,5 @@
 {
-  "name": "@ucd-libselfcheckout",
+  "name": "@ucd-lib/selfcheckout",
   "version": "1.0.0",
   "description": "UCD Library Polymer Selfcheckout App for Alma with Node.js micro-server",
   "main": "index.js",
@@ -24,8 +24,10 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "dotenv": "^6.0.0",
     "hapi": "^17.5.2",
+    "hapi-auth-basic": "^5.0.0",
     "inert": "^5.1.0",
     "joi": "^13.4.0",
     "node-fetch": "^2.2.0",

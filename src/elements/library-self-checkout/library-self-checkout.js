@@ -452,6 +452,15 @@ class LibrarySelfCheckout extends PolymerElement {
             }
             element._close_progress();
             element.$.barcode.getElementsByTagName('input')[0].focus();
+            for (var i = 0; i < element.user_loans.length; i++) {
+                if (element.user_loans[i].loan_id == response.loan_id){
+                    if (element.verbose){
+                        console.log("Item already checked out.");
+                    }
+                    element._toast_error('You have already checked out this title. See circulation desk for assistance.', 'details');
+                    return;
+                }
+            }
             response.loan_date = "now";
             response.ld_class = 'today';
             response.animation = "last_checkout";
@@ -460,18 +469,14 @@ class LibrarySelfCheckout extends PolymerElement {
             element.checkout_count += 1;
 
             // Apply animation if animations api exists
+            // Had to use timeout function to work reliably with dom-repeat
             var last_checkout = element.$.loan_table.children[1];
-                /*
-                last_checkout.animate({
-                    backgroundColor: [ "inherit", "#78BE20", "inherit" ],
-                }, {'duration': 3000}); */
-
             setTimeout(function(){
                 var last_checkout = element.$.loan_table.children[1];
                 if ( typeof(last_checkout.animate) === 'function' ) {
                     console.log("running checkout animation...");
                     last_checkout.animate({
-                            backgroundColor: [ "inherit", "#78BE20", "inherit","#78BE20", "inherit" ],
+                            backgroundColor: [ "inherit", "#99c75f", "inherit"],
                         }, {'duration': 3000});
 
                 }
@@ -650,7 +655,7 @@ class LibrarySelfCheckout extends PolymerElement {
         if (dt == 'now'){
             return "Just Now"
         }
-        var dt = new Date(dt.split("T")[0]);
+        var dt = new Date(dt);
         var today = new Date();
         today.setHours(0,0,0,0);
 
@@ -719,6 +724,7 @@ class LibrarySelfCheckout extends PolymerElement {
                     s2 += ";";
                 }
                 else if ( s[i] == " " || s[i] == "") {}
+                else if( s[i].includes('max-width')){}
                 else{
                     s2 += s[i];
                     s2 += ";";

@@ -9,6 +9,9 @@ import RootHandlers from './Root.handlers';
 const getRoot = {
   method: 'GET',
   path: '/',
+  options: {
+      auth: 'simple'
+  },
   handler: RootHandlers.getRoot
 };
 
