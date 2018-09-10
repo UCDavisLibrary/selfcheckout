@@ -4,7 +4,7 @@ let config = require('@ucd-lib/cork-app-build').dist({
   // path to your entry .js file
   entry : 'src/elements/library-self-checkout/library-self-checkout.js',
   // folder where bundle.js and ie-bundle.js will be written
-  dist : 'src/elements/library-self-checkout/dist',
+  dist : 'src/assets',
   // path your client (most likely installed via yarn) node_modules folder.
   // Due to the flat:true flag of yarn, it's normally best to separate
   // client code/libraries from all other modules (ex: build tools such as this).
