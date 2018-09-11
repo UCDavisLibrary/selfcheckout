@@ -22,7 +22,7 @@ const getAlma = async (req, h) => {
   // Verify referrer
   let ref = req.info.referrer.split(":");
   if (ref.length >= 2){
-      ref = ref[0] + ref[1]
+      ref = ref[0] + ":" + ref[1];
   }
   else {
       ref = ref[0];
@@ -51,16 +51,6 @@ const getAlma = async (req, h) => {
   else {
       return h.response({}).code(404);
   }
-};
-
-const postAlma = (req, h) => {
-  // Make alma api post request
-
-  return {
-    id: 2,
-    firstName: req.payload.firstName,
-    lastName: req.payload.lastName
-  };
 };
 
 const AlmaHandlers = {
