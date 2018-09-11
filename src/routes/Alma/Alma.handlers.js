@@ -19,8 +19,15 @@ const getAlma = async (req, h) => {
   }
   almaURL += ("?" + URIEncode(almaQuery));
 
-
-  if (req.info.referrer != process.env.REFERRER){
+  // Verify referrer
+  let ref = req.info.referrer.split(":");
+  if (ref.length >= 2){
+      ref = ref[0] + ref[1]
+  }
+  else {
+      ref = ref[0];
+  }
+  if (ref != process.env.REFERRER){
       return h.response('UC Davis library use only').code(403);
   }
 
