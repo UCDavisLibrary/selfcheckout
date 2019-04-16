@@ -27,9 +27,14 @@ const getAlma = async (req, h) => {
   else {
       ref = ref[0];
   }
+  if (ref.slice(-1) === "/"){
+      ref = ref.slice(0, -1);
+  }
+
   if (ref != process.env.REFERRER){
       return h.response('UC Davis library use only').code(403);
   }
+
 
   // query api
   var fetchParams = {

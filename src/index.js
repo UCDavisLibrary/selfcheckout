@@ -1,9 +1,8 @@
 require('dotenv').config();
 //const Bcrypt = require('bcrypt');
 import Hapi from 'hapi';
-
 import Logger from './utils/logger';
-import Routes from './routes';
+import Routes from './routes/';
 
 const server = Hapi.server({
   port: process.env.SERVER_PORT,
